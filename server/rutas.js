@@ -77,6 +77,7 @@ module.exports = function(app) {
             estado: req.body.estado,
             municipio: req.body.municipio,
             parroquia: req.body.parroquia,
+            ciudad: req.body.ciudad,
             telefonos: req.body.telefonos,
             correos: req.body.correos,
             direccionHab: req.body.direccionHab,

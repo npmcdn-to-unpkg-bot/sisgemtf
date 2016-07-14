@@ -47,15 +47,20 @@
                     <h3><i class="fa fa-map-marker" aria-hidden="true"></i> Ubicación y direcciones</h3>
                     <label for="estado">
                         Estado
-                        <select name="estado" required ng-options="estado for (estado, municipios) in estados" ng-model="natural.estado">
+                        <select name="estado" required ng-options="estado as estado.estado for estado in estados" ng-model="natural.estado">
                             <option value="">seleccione el estado</option>
+                        </select>
+                    </label>
+                    <label for="ciudad">
+                        Ciudad
+                        <select name="estado" required ng-options="ciudad as ciudad for ciudad in natural.estado.ciudades" ng-model="natural.ciudad">
+                            <option value="">seleccione la ciudad</option>
                         </select>
                     </label>
                     <label for="municipio">
                         Municipio
-                        <select name="municipio" required ng-disabled="!natural.estado" ng-model="natural.municipio">
+                        <select name="municipio" required ng-disabled="!natural.estado" ng-options="municipio as municipio.municipio for municipio in natural.estado.municipios" ng-model="natural.municipio">
                             <option value="">seleccione el municipio</option>
-                            <option ng-repeat="municipio in natural.estado.municipios" value="{{municipio.municipio}}">{{municipio.municipio}}</option>
                         </select>
                     </label>
                     <label for="parroquia">
@@ -99,4 +104,3 @@
         </form>
     </div>
 </section>
-<!-- ultima version -->
