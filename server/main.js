@@ -26,9 +26,9 @@ router.get('/', function(req, res){
 
 require('./rutas')(app);
 
-var port = Number(process.env.PORT || 3000)
+var port = Number(process.env.PORT || 3000);
 
 app.use(router);
 app.listen(port, function(){
-    console.log('Servidor Node corriendo por el puerto' + port);
+    console.log('Servidor Node corriendo por el puerto ' + port);
 });
