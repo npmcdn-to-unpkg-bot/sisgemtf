@@ -101,49 +101,6 @@ header {
             }
         }
     }
-    .form-new-contact {
-        margin-top: 1rem;
-        padding: 1rem;
-        @include grid-column(12);
-        column-count: 2;
-        column-gap: 1rem;
-        .formBlock {
-            width: 100%;
-            display: inline-block;
-            margin: 0 0 1rem;
-            &:last-child {
-                @include grid-column-end;
-            }
-            .half-field {
-                @include grid-column(6);
-                padding: 0 !important;
-            }
-            .warp {
-                width: 100%;
-                padding: 1rem;
-                padding-top: 2rem;
-                margin-right: .2rem;
-                margin-bottom: 1rem;
-                @include card(1);
-                background-color: white;
-                h3 {
-                    border-bottom: 2px solid $secundary-color;
-                }
-            }
-        }
-        .submit-button {
-            position: fixed;
-            right: 5rem;
-            bottom: 3rem;
-            button {
-                border-radius: 50%;
-                &:hover {
-                    @include card(2);
-                    transition: all .3s ease;
-                }
-            }
-        }
-    }
 
     .related {
         @include grid-column(3);
@@ -211,6 +168,54 @@ header {
                     li {
                         margin-bottom: .5rem;
                     }
+                }
+            }
+        }
+    }
+
+    .form-new-contact {
+        margin-top: 1rem;
+        padding: 1rem;
+        @include grid-column(12);
+        -webkit-column-count: 2;
+        -webkit-column-gap: 1rem;
+        -moz-column-count: 2;
+        -moz-column-gap: 1rem;
+        column-count: 2;
+        column-gap: 1rem;
+        .formBlock {
+            width: 100%;
+            display: inline-block;
+            margin: 0 0 1rem;
+            &:last-child {
+                @include grid-column-end;
+            }
+            .half-field {
+                @include grid-column(6);
+                padding: 0 !important;
+            }
+            .warp {
+                width: 100%;
+                padding: 1rem;
+                padding-top: 2rem;
+                margin-right: .2rem;
+                margin-bottom: 1rem;
+                @include card(1);
+                background-color: white;
+                h3 {
+                    border-bottom: 2px solid $secundary-color;
+                }
+            }
+        }
+        .submit-button {
+            position: fixed;
+            right: 5rem;
+            bottom: 3rem;
+            button {
+                border-radius: 50%;
+                &:hover {
+                    @include card(2);
+                    transition: all .3s ease;
                 }
             }
         }
