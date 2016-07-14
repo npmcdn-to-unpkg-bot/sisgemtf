@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="sisgemTF">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <title>SISGEM Trasandina | Home</title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <script src="/assets/app.js" charset="utf-8"></script>
+    <script src="/assets/pace.min.js" charset="utf-8"></script>
+</head>
+<body>
+    <nav id="top-nav">
+        <div class="warp">
+            <div class="left">
+                <span class="logo"><img src="/assets/img/sisgem-logo.png"></span>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#/">inicio</a></li>
+                    <li><a href="#/contactos">gestor de contactos</a></li>
+                    <li><a href="#/campane">generador de campañas</a></li>
+                    <li><a href="#/promotions">promociones <i class="fa fa-bell"></i></a></li>
+                    <li><a href="#/config">configuración <i class="fa fa-cog"></i></a></li>
+                </ul>
+            </div>
+            <div class="right"></div>
+        </div>
+    </nav>
+    <header>
+        <div class="row">
+            <div class="logo">
+                <img src="/assets/img/sisgem-logo.png">
+            </div>
+        </div>
+    </header>
+    <section id="main">
+        <div class="row" ng-view></div>
+    </section>
+    <footer>
+        <div class="row">
+            <div class="item">Sistema Gerencial Torre Fuerte</div>
+            <div class="item">Desarrollado por Bec Media Group</div>
+        </div>
+    </footer>
+</body>
+</html>

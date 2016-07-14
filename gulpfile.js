@@ -11,22 +11,28 @@ gulp.task('sass', function() {
         .pipe(sass({
             outputStyle: 'compressed'
         }))
-        .pipe(gulp.dest('./dist'))
+        .pipe(gulp.dest('./public/assets'))
 });
 //conatenar JS
 gulp.task('concatenar', function() {
     return gulp.src([
-        //'./bower_components/jquery/dist/jquery.js',
-        './bower_components/foundation-sites/dist/foundation.js',
+        './bower_components/jquery/dist/jquery.js',
+        // Foundation sites
+        './bower_components/foundation-sites/js/foundation.core.js',
+        // angular
         './bower_components/angular/angular.js',
         './bower_components/angular-route/angular-route.js',
         './bower_components/angular-local-storage/dist/angular-local-storage.js',
+        './bower_components/angular-resource/angular-resource.js',
+        './bower_components/angular-masonry/angular-masonry.js',
+        // user
+        './source/app/main.js',
         './source/app/**/*.js'
     ])
     .pipe(plumber())
     .pipe(concat('app.js'))
     //.pipe(uglify())
-    .pipe(gulp.dest('./dist'));
+    .pipe(gulp.dest('./public/assets'));
 });
 //Watcher default
 gulp.task('default', ['sass', 'concatenar'], function() {

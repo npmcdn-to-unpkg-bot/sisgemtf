@@ -1,0 +1,29 @@
+{
+  "name": "sisgem_torrefuerte",
+  "description": "Sistema de gestion de informacion",
+  "main": "gulpfile.js",
+  "authors": [
+    "JoezerG <joezergullo@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "foundation-sites": "^6.2.1",
+    "font-awesome": "^4.6.3",
+    "angular": "^1.5.5"
+  },
+  "dependencies": {
+    "angular-local-storage": "^0.2.7",
+    "angular-route": "^1.5.5",
+    "angular-resource": "^1.5.5",
+    "masonry": "^4.1.0"
+  }
+}

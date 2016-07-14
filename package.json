@@ -1,0 +1,26 @@
+{
+  "name": "sisgem_torrefuerte",
+  "version": "1.0.0",
+  "description": "Sistema de gestion de informacion",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "nodemon server/main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^2.3.1",
+    "gulp-uglify": "^1.5.3",
+    "nodemon": "^1.9.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.4.17",
+    "socket.io": "^1.4.6"
+  }
+}

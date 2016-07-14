@@ -1,0 +1,40 @@
+<section id="contactos" ng-controller="ListContactsController">
+    <div class="actions-bar">
+        <a href="#/contactos-new" class="button" ><i class="fa fa-plus"></i> Nuevo contacto</a>
+    </div>
+    <div class="search">
+        <div class="searchbox">
+            <span><i class="fa fa-search" aria-hidden="true"></i></span>
+            <input type="search" placeholder="Buscar por nombre" ng-model="buscar.nombre">
+            <input type="search" placeholder="Buscar por RIF" ng-model="buscar.rif">
+        </div>
+        <div class="filter">
+            <select name="estado" ng-model="buscar.estado">
+                <option value="">Seleccione un estado</option>
+                <option ng-repeat="estado in estados" value="{{estado.estado}}">{{estado.estado}}</option>
+            </select>
+        </div>
+    </div>
+    <div id="listContactos">
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Nombre</th>
+                    <th>Estado</th>
+                    <th>Empresa</th>
+                    <th>Detalles</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="contacto in contactos | filter: buscar | orderBy: 'nombreApellido'">
+                    <td>{{$index + 1}}</td>
+                    <td>{{contacto.nombreApellido}}</td>
+                    <td>{{contacto.estado}}</td>
+                    <td><i class="fa fa-building" aria-hidden="true"></i> {{contacto.empresa}}</td>
+                    <td><a href="#/contactos/{{contacto._id}}">Ver detalles</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

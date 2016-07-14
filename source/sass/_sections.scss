@@ -1,0 +1,218 @@
+header {
+    margin-top: 70px;
+    background-color: $secundary-color;
+    padding: 2rem;
+    .logo {
+        @include grid-column(4);
+        @include grid-column-position(center);
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}
+
+#home {
+    &.quickacces {
+        @include grid-column(12);
+        .item {
+            @include  grid-column(4);
+            .warp {
+                @include grid-column(12);
+                background-color: white;
+                @include card(1);
+                padding: 1rem;
+                margin: .5rem;
+                text-align: center;
+                min-height: 15rem;
+                border-top: 5px solid $secundary-color;
+                transition: .2s all ease;
+                &:hover {
+                    @include card(2);
+                }
+                .icon {
+                    @include grid-column(12);
+                }
+            }
+            &:last-child {
+                @include grid-column-end;
+            }
+        }
+    }
+}
+
+#login {
+    &.loginForm {
+        @include grid-column(4);
+        @include grid-column-position(center);
+        background-color: white;
+        @include card(2);
+        margin-top: 2rem;
+        padding: 2.5rem 2rem 1rem;
+    }
+}
+
+#contactos {
+    #listContactos {
+        @include grid-column;
+        background-color: white;
+        padding: 1rem;
+        @include card(1);
+        table {
+            @include table-hover;
+            tbody tr:hover {
+                @include card(1);
+                background-color: $primary-color !important;
+                color: white;
+                cursor: pointer;
+                a {
+                    color: white;
+                }
+            }
+        }
+    }
+    //Generals sections
+    .actions-bar {
+        @include grid-column(12);
+        text-align: right;
+    }
+    .search {
+        @include grid-column;
+        padding: 1rem 0rem !important;
+        .searchbox {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            @include grid-column(6);
+            i.fa {
+                margin-right: .5rem;
+                font-size: 1.2rem;
+            }
+            input {
+                width: 45%;
+                display: inline-block;
+                margin-bottom: 0;
+            }
+        }
+        .filter {
+            @include grid-column(6);
+            select {
+                width: 50%;
+                margin-bottom: 0;
+            }
+        }
+    }
+    .form-new-contact {
+        margin-top: 1rem;
+        padding: 1rem;
+        @include grid-column(12);
+        column-count: 2;
+        column-gap: 1rem;
+        .formBlock {
+            width: 100%;
+            display: inline-block;
+            margin: 0 0 1rem;
+            &:last-child {
+                @include grid-column-end;
+            }
+            .half-field {
+                @include grid-column(6);
+                padding: 0 !important;
+            }
+            .warp {
+                width: 100%;
+                padding: 1rem;
+                padding-top: 2rem;
+                margin-right: .2rem;
+                margin-bottom: 1rem;
+                @include card(1);
+                background-color: white;
+                h3 {
+                    border-bottom: 2px solid $secundary-color;
+                }
+            }
+        }
+        .submit-button {
+            position: fixed;
+            right: 5rem;
+            bottom: 3rem;
+            button {
+                border-radius: 50%;
+                &:hover {
+                    @include card(2);
+                    transition: all .3s ease;
+                }
+            }
+        }
+    }
+
+    .related {
+        @include grid-column(3);
+        @include grid-column-end;
+        padding: 1rem;
+        background-color: white;
+        @include card(1);
+        .fa-circle {
+            color: $primary-color;
+        }
+        .item {
+            display: flex;
+            border-bottom: 1px solid #f2f2f2;
+            width: 100%;
+            padding-bottom: .5rem;
+            h4 {
+                margin-left: .5rem;
+                vertical-align: text-bottom;
+            }
+        }
+    }
+    .contact-view {
+        @include grid-column(9);
+        .fa-circle {
+            color: $primary-color;
+        }
+        .basic {
+            @include grid-column(12);
+            padding-bottom: 2rem;
+            h1 {
+                font-weight: 700;
+                display: inline-block;
+            }
+            span.ranking {
+                display: inline-block;
+                vertical-align: super;;
+                margin-left: 1rem;
+                i.fa {
+                    color: $secundary-color;
+                    margin-right: .2rem;
+                }
+            }
+        }
+        .info-grid {
+            @include grid-column(12);
+            column-count: 2;
+            column-gap: 1em;
+        }
+        .section {
+            width: 100%;
+            margin: 0 0 1em;
+            display: inline-block;
+            .warp {
+                width: 100%;
+                display: block;
+                background-color: white;
+                @include card(1);
+                border-top: 2px solid $secundary-color;
+                margin-bottom: 1rem;
+                padding: 1rem;
+                ul {
+                    list-style: none;;
+                    margin: 0;
+                    padding: 0;
+                    li {
+                        margin-bottom: .5rem;
+                    }
+                }
+            }
+        }
+    }
+}

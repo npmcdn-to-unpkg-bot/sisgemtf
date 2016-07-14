@@ -1,0 +1,69 @@
+<section id="contactos" ng-controller="ContactViewController">
+    <div class="contact-view">
+        <div class="basic">
+            <h1>
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+                </span>
+                <span>{{contacto.nombreApellido}}</span>
+            </h1>
+            <span class="ranking">
+                <i class="fa fa-star fa-2x"></i>
+                <i class="fa fa-star fa-2x"></i>
+                <i class="fa fa-star fa-2x"></i>
+            </span>
+        </div>
+        <div class="info-grid">
+            <div class="section">
+                <div class="warp">
+                    <h3><i class="fa fa-user" aria-hidden="true"></i> Datos Básico</h3>
+                    <ul>
+                        <li><b>Cedula de Identidad</b></li>
+                        <li>{{contacto.idLegal}}</li>
+                    </ul>
+                    <hr>
+                    <ul>
+                        <li><b>Cumpleaños</b></li>
+                        <li>{{contacto.birthDate | date: 'longDate'}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <div class="warp">
+                    <h3><i class="fa fa-map"></i> Dato de ubicación</h3>
+                    <ul>
+                        <li>{{contacto.estado}}</li>
+                        <li>{{contacto.municipio}}</li>
+                        <li>{{contacto.parroquia}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <div class="warp">
+                    <h3><i class="fa fa-phone" aria-hidden="true"></i> Datos de contacto</h3>
+                    <ul>
+                        <li><b>Telefonos</b></li>
+                        <li ng-repeat="telefono in contacto.telefonos">{{telefono}}</li>
+                    </ul>
+                    <hr>
+                    <ul>
+                        <li><b>Correos</b></li>
+                        <li ng-repeat="correo in contacto.correos">{{correo}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="related">
+        <div class="relation">
+            <div class="item">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-building fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4>{{contacto.empresa}}</h4>
+            </div>
+        </div>
+    </div>
+</section>

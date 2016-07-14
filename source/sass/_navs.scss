@@ -1,0 +1,70 @@
+#top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $primary-color;
+    color: white;
+    @include card(1);
+    padding: .8rem 0rem;
+    padding-bottom: 0;
+    z-index: 999;
+
+    .warp {
+        @include grid-column(12);
+    }
+
+    .left {
+        float: left;
+        display: block;
+        @include grid-column(1);
+        margin-top: .5rem;
+    }
+    .menu {
+        @include grid-column(10);
+        @include grid-column-position(center);
+        border-left: 1px solid $primary-color-light;
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            li {
+                display: inline-block;
+                a {
+                    display: block;
+                    padding: 1rem;
+                    padding-bottom: 1.8rem;
+                    text-transform: uppercase;
+                    color: white;
+                    position: relative;
+                    transition: .2s ease;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        right: 50%;
+                        height: 0px;
+                        background-color: white;
+                        transition: all 0.2s ease;
+                    }
+                    &:hover {
+                        background-color: rgba(white,.2);
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            height: 3px;
+                            background-color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .right {
+        @include grid-column(1);
+    }
+}

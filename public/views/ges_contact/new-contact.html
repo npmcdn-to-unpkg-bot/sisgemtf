@@ -1,0 +1,101 @@
+<section id="contactos" ng-controller="NewContactController">
+    <div class="form-new-contact">
+        <form ng-submit="addContact()">
+            <div class="submit-button">
+                <button class="button success large" type="sub"><i class="fa fa-save fa-2x"></i></button>
+            </div>
+            <div class="formBlock">
+                <div class="warp">
+                    <h3><i class="fa fa-briefcase" aria-hidden="true"></i> Datos básicos</h3>
+                    <label for="nombre">
+                        Nombre y Apellido
+                        <input ng-model="natural.nombreApellido" type="text" name="nombre" required="">
+                    </label>
+                    <label for="birthDate">
+                        Fecha de Nacimiento
+                        <input ng-model="natural.birthDate" type="date" name="birthDate">
+                    </label>
+                    <label for="idLegal">
+                        Cedula de Identidad
+                        <input ng-model="natural.idLegal" type="text" name="idLegal" placeholder="V-00000000">
+                    </label>
+                </div>
+            </div>
+            <div class="formBlock">
+                <div class="warp">
+                    <h3><i class="fa fa-phone" aria-hidden="true"></i> Contacto</h3>
+                    <label for="telefonos">
+                        Telefonos
+                        <span class="input-group" ng-repeat="numberField in numberFields">
+                            <span class="input-group-label" ng-click="removeNumberFields($index)"><i class="fa fa-close"></i></span>
+                            <input ng-model="numberField.number" class="input-group-field" type="tel" name="telefonos" required="" placeholder="0000-000-0000" >
+                        </span>
+                        <a class="button hollow small expanded" ng-click="addNumberFields()"><i class="fa fa-plus"></i> Agregar campo</a>
+                    </label>
+                    <label for="correos">
+                        Correos Electronicos
+                        <span class="input-group" ng-repeat="mailField in mailFields">
+                            <span class="input-group-label" ng-click="removeMailFields($index)"><i class="fa fa-close"></i></span>
+                            <input ng-model="mailField.correo" class="input-group-field" type="email" name="correos" required="" placeholder="user@mail.com" >
+                        </span>
+                        <a class="button hollow small expanded" ng-click="addMailFields()"><i class="fa fa-plus"></i> Agregar campo</a>
+                    </label>
+                </div>
+            </div>
+            <div class="formBlock">
+                <div class="warp">
+                    <h3><i class="fa fa-map-marker" aria-hidden="true"></i> Ubicación y direcciones</h3>
+                    <label for="estado">
+                        Estado
+                        <select name="estado" required ng-options="estado for (estado, municipios) in estados" ng-model="natural.estado">
+                            <option value="">seleccione el estado</option>
+                        </select>
+                    </label>
+                    <label for="municipio">
+                        Municipio
+                        <select name="municipio" required ng-disabled="!natural.estado" ng-model="natural.municipio">
+                            <option value="">seleccione el municipio</option>
+                            <option ng-repeat="municipio in natural.estado.municipios" value="{{municipio.municipio}}">{{municipio.municipio}}</option>
+                        </select>
+                    </label>
+                    <label for="parroquia">
+                        Parroquia
+                        <select name="parroquia" required ng-disabled="!natural.municipio" ng-model="natural.parroquia">
+                            <option value="">seleccione la parroquia</option>
+                            <option ng-repeat="parroquia in natural.municipio.parroquias" value="{{parroquia}}">{{parroquia}}</option>
+                        </select>
+                    </label>
+                    <label for="direccionHab">
+                        Dirección de habitación
+                        <textarea name="direccionHab" ng-model="natural.direccionHab" rows="8" cols="40"></textarea>
+                    </label>
+                </div>
+            </div>
+            <div class="formBlock">
+                <div class="warp">
+                    <h3><i class="fa fa-comments" aria-hidden="true"></i> Social</h3>
+                    <label for="facebook">
+                        Facebook
+                        <input type="text" name="facebook">
+                    </label>
+                    <label for="twitter">
+                        Twitter
+                        <input type="text" name="twitter">
+                    </label>
+                </div>
+            </div>
+            <div class="formBlock">
+                <div class="warp">
+                    <h3><i class="fa fa-building" aria-hidden="true"></i> Empresa</h3>
+                    <label for="empresa">
+                        Empresa a la que pertenece
+                        <select name="empresa" ng-options="empresa._id as empresa.nombreSocial for empresa in empresas" ng-model="natural.empresaId">
+                            <option value="">Seleccion una empresa</option>
+                        </select>
+                        <small>Para crear una empresa haga click <a href="">aquí</a></small>
+                    </label>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
