@@ -9,20 +9,17 @@ var naturalSchema = new Schema({
     idLegal: String,
     telefonos: Array,
     correos: Array,
-    estado: String,
-    municipio: String,
-    parroquia: String,
+    estado: Schema.Types.ObjectId,
     ciudad: String,
+    municipio: Schema.Types.ObjectId,
+    parroquia: String,
     direccionHab: String,
     direccionDesp: String,
     observaciones: String,
     facebook: String,
     twitter: String,
     ranking: Number,
-    empresaId: {
-        type: Schema.ObjectId,
-        ref: 'empresa'
-    }
+    empresaId: Schema.Types.ObjectId
 });
 
 module.exports = mongoose.model('naturales', naturalSchema);
